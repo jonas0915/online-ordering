@@ -1,0 +1,10 @@
+.restaurant img {
+  height: 500px;
+  width: 950px;
+  margin-bottom: 50px;
+}
+
+.restaurant {
+  width: 100%;
+  text-align: center;
+}
