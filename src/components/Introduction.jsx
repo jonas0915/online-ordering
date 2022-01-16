@@ -3,8 +3,8 @@ import React from "react";
 function Introduction() {
   return (
     <>
-      <div id="moto">
-        <div className="container">
+      <div className="container">
+        <div id="moto">
           <p>"We Make Dinning Better"</p>
         </div>
       </div>

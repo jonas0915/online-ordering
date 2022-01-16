@@ -6,5 +6,7 @@ import "./components/Introduction.css";
 import "./components/Navigation.css";
 import "./components/Menu.css";
 import "./components/Footer.css";
+import "./components/CreateComents.css";
+import "./components/Coments.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));

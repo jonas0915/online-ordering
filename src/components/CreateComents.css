@@ -1,15 +1,3 @@
-.restaurant img {
-  height: 300px;
-  width: 570px;
-  /* margin-bottom: 50px; */
-}
-
-.restaurant {
-  width: 100%;
-  text-align: center;
-  margin-top: 70px;
-}
-
 form {
   position: relative;
   width: 480px;

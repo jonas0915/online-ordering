@@ -4,14 +4,11 @@ import Restaurant from "../photo/Restaurant.png";
 function Menu() {
   return (
     <>
-      <div id="order">
-        <div className="container">
+      <div className="container">
+        <div id="order">
           <div className="restaurant">
             <img src={Restaurant} alt="restaurant" />
           </div>
-          <form>
-            <input></input>
-          </form>
         </div>
       </div>
     </>
