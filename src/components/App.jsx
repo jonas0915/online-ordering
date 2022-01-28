@@ -30,7 +30,6 @@ function App() {
         <Navigation />
         <Menu />
         <Upload onSuccess={onSuccess} />
-
         <CreateComents onAdd={addComment} />
         <Preview files={files} />
         <ToastContainer />

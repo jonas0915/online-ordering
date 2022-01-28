@@ -12,4 +12,9 @@ import "./components/Coments.css";
 import "./components/Upload.css";
 import "./components/Preview.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
