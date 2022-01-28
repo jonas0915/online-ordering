@@ -1,0 +1,50 @@
+.restaurant img {
+  height: 300px;
+  width: 570px;
+  /* margin-bottom: 50px; */
+}
+
+.restaurant {
+  width: 100%;
+  text-align: center;
+  margin-top: 70px;
+}
+
+form {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 40px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -35px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+form button:hover {
+  background-color: #333;
+  transition: all 0.5s ease;
+}

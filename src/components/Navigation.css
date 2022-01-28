@@ -1,0 +1,36 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  color: whitesmoke;
+  background-color: #333;
+  padding: 5px 15px;
+  justify-content: space-between;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  text-align: center;
+  font-size: 20px;
+  margin: auto 20px;
+  width: 80px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.navList:hover {
+  color: black;
+  background-color: rgb(170, 162, 162);
+}
+
+.myLogo {
+  height: 50px;
+}
