@@ -33,7 +33,13 @@ function Upload({ onSuccess }) {
   return (
     <>
       <div>
-        <form method="post" action="#" id="#" onSubmit={onSubmit}>
+        <form
+          method="post"
+          action="#"
+          id="#"
+          className="uploader"
+          onSubmit={onSubmit}
+        >
           <div className="form-group files">
             <label>Upload Your File </label>
             <input

@@ -4,7 +4,7 @@
   -webkit-transition: outline-offset 0.15s ease-in-out,
     background-color 0.15s linear;
   transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
-  padding: 120px 0px 85px 35%;
+  padding: 15px 0px 15px 15px;
   text-align: center !important;
   margin: 0;
   width: 100% !important;
@@ -19,6 +19,7 @@
 }
 .files {
   position: relative;
+  margin-top: -12px;
 }
 .files:after {
   pointer-events: none;
@@ -29,7 +30,7 @@
   right: 0;
   height: 56px;
   content: "";
-  background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+  /* background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png); */
   display: block;
   margin: 0 auto;
   background-size: 100%;
@@ -46,11 +47,16 @@
   width: 100%;
   right: 0;
   height: 57px;
-  content: " or drag it here. ";
+  /* content: " or drag it here. "; */
   display: block;
-  margin: 0 auto;
-  color: #2ea591;
+  margin: -20px auto;
+  color: #06312a;
   font-weight: 600;
   text-transform: capitalize;
   text-align: center;
+}
+
+.uploader {
+  width: 500px;
+  height: 100px;
 }

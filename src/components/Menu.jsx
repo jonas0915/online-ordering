@@ -5,7 +5,13 @@ function Menu() {
     <>
       <div className="container">
         <div id="order">
-          <div className="restaurant"></div>
+          <div className="about-restaurant">
+            <h1>
+              Share your new found favorite dinning spots <br></br> and leave a
+              comment
+            </h1>
+            <div id="preview"></div>
+          </div>
         </div>
       </div>
     </>

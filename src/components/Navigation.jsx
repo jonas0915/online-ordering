@@ -11,12 +11,11 @@ function Navigation() {
           </a>
           <ul>
             <li className="navList">
-              <a href="#moto">About</a>
+              <a href="nav">About</a>
             </li>
             <li className="navList">
-              <a href="#order">Order</a>
+              <a href="#preview">Review</a>
             </li>
-            <li className="navList">Contact</li>
           </ul>
         </nav>
       </div>

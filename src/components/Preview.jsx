@@ -6,7 +6,7 @@ function Preview({ files }) {
   }
   return files.map((file) => (
     <div className="container">
-      <div>
+      <div id="preview">
         <img
           className="image-render"
           style={{ maxWidth: "200px" }}
