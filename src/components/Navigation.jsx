@@ -2,6 +2,13 @@ import React from "react";
 import MyLogo from "../photo/Logo.png";
 
 function Navigation() {
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 150) {
+      document.querySelector(".navbar").style.opacity = 0.9;
+    } else {
+      document.querySelector(".navbar").style.opacity = 1;
+    }
+  });
   return (
     <>
       <div>

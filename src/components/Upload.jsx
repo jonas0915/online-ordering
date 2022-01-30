@@ -32,6 +32,8 @@ function Upload({ onSuccess }) {
 
   return (
     <>
+      <div id="preview" style={{ marginBottom: "100px" }}></div>
+
       <div>
         <form
           method="post"

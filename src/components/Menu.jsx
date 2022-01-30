@@ -10,7 +10,6 @@ function Menu() {
               Share your new found favorite dinning spots <br></br> and leave a
               comment
             </h1>
-            <div id="preview"></div>
           </div>
         </div>
       </div>
