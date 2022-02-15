@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CreateComents(props) {
+function CreateComments(props) {
   const [comment, setComment] = useState({
     title: "",
     comment: ""
@@ -49,4 +49,4 @@ function CreateComents(props) {
   );
 }
 
-export default CreateComents;
+export default CreateComments;

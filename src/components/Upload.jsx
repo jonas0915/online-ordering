@@ -2,15 +2,47 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-function Upload({ onSuccess }) {
-  const [files, setFiles] = useState([]);
+function Upload({ onSuccess }, props) {
+  const [files, setFiles] = useState([
+    // {
+    //   photo: ""
+    // }
+  ]);
 
   function onInputChange(event) {
+    // const { name, value } = event.target;
+
+    // setFiles((prevComment) => {
+    //   return { ...prevComment, [name]: value };
+    // });
     setFiles(event.target.files);
+  }
+  const [caption, setCaption] = useState({
+    caption: "",
+    story: ""
+  });
+  function addCaption(event) {
+    const { name, value } = event.target;
+
+    setCaption((prevCaption) => {
+      return { ...prevCaption, [name]: value };
+    });
+  }
+
+  function submitComment(event) {
+    props.onAdd(caption);
+    setCaption({
+      caption: "",
+      story: ""
+    });
   }
 
   function onSubmit(event) {
-    event.preventDefault();
+    // props.onAdd(files);
+
+    // setFiles({
+    //   photo: ""
+    // });
 
     const data = new FormData();
 
@@ -28,6 +60,7 @@ function Upload({ onSuccess }) {
       .catch((event) => {
         toast.error("Upload Error");
       });
+    event.preventDefault();
   }
 
   return (
@@ -45,13 +78,30 @@ function Upload({ onSuccess }) {
           <div className="form-group files">
             <label>Upload Your File </label>
             <input
+              // name="photo"
               type="file"
+              // value={files.photo}
               onChange={onInputChange}
               className="form-control"
               multiple
             />
           </div>
-          <button type="submit">Submit</button>
+          <input
+            name="caption"
+            onChange={addCaption}
+            value={caption.caption}
+            placeholder="Caption"
+          ></input>
+          <textarea
+            name="story"
+            onChange={addCaption}
+            value={caption.story}
+            placeholder="Story..."
+            rows="2"
+          ></textarea>
+          <button onClick={submitComment} type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navigation from "./Navigation";
 import Menu from "./Menu";
 import Footer from "./Footer";
-import CreateComents from "./CreateComents";
+import CreateComments from "./CreateComments";
 import Comment from "./Comment";
 import Upload from "./Upload";
 import Preview from "./Preview";
@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  // image render
   const [comments, setComments] = useState([]);
 
   function addComment(newComment) {
@@ -24,14 +25,36 @@ function App() {
     setFiles(savedFiles);
   }
 
+  // caption render
+
+  const [captions, setCaptions] = useState([]);
+
+  function addCaptions(newCaption) {
+    setCaptions((prevCaptions) => {
+      return [...prevCaptions, newCaption];
+    });
+  }
+
   return (
     <>
       <React.StrictMode>
         <Navigation />
         <Menu />
-        <Upload onSuccess={onSuccess} />
-        <CreateComents onAdd={addComment} />
-        <Preview files={files} />
+        <Upload onSuccess={onSuccess} onAdd={addCaptions} />
+        <CreateComments onAdd={addComment} />
+
+        {captions.map((captionItem, index) => {
+          return (
+            <Preview
+              files={files}
+              key={index}
+              id={index}
+              caption={captionItem.caption}
+              story={captionItem.story}
+            />
+          );
+        })}
+
         <ToastContainer />
         {comments.map((commentItem, index) => {
           return (
