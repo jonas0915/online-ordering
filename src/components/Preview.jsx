@@ -1,6 +1,6 @@
 import React from "react";
 
-function Preview({ files }, props) {
+function Preview({ files }) {
   if (!files.length) {
     return null;
   }
@@ -13,10 +13,6 @@ function Preview({ files }, props) {
           src={`//localhost:8000/${file.filename}`}
           alt={file.originalname}
         />
-        <div>
-          <h1>{props.caption}</h1>
-          <h1>{props.story}</h1>
-        </div>
       </div>
     </div>
   ));

@@ -2,47 +2,15 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-function Upload({ onSuccess }, props) {
-  const [files, setFiles] = useState([
-    // {
-    //   photo: ""
-    // }
-  ]);
+function Upload({ onSuccess }) {
+  const [files, setFiles] = useState([]);
 
   function onInputChange(event) {
-    // const { name, value } = event.target;
-
-    // setFiles((prevComment) => {
-    //   return { ...prevComment, [name]: value };
-    // });
     setFiles(event.target.files);
-  }
-  const [caption, setCaption] = useState({
-    caption: "",
-    story: ""
-  });
-  function addCaption(event) {
-    const { name, value } = event.target;
-
-    setCaption((prevCaption) => {
-      return { ...prevCaption, [name]: value };
-    });
-  }
-
-  function submitComment(event) {
-    props.onAdd(caption);
-    setCaption({
-      caption: "",
-      story: ""
-    });
   }
 
   function onSubmit(event) {
-    // props.onAdd(files);
-
-    // setFiles({
-    //   photo: ""
-    // });
+    event.preventDefault();
 
     const data = new FormData();
 
@@ -53,14 +21,13 @@ function Upload({ onSuccess }, props) {
 
     axios
       .post("//localhost:8000/upload", data)
-      .then((respose) => {
+      .then((response) => {
         toast.success("Upload Success");
-        onSuccess(respose.data);
+        onSuccess(response.data);
       })
       .catch((event) => {
         toast.error("Upload Error");
       });
-    event.preventDefault();
   }
 
   return (
@@ -78,30 +45,14 @@ function Upload({ onSuccess }, props) {
           <div className="form-group files">
             <label>Upload Your File </label>
             <input
-              // name="photo"
               type="file"
-              // value={files.photo}
               onChange={onInputChange}
               className="form-control"
               multiple
             />
           </div>
-          <input
-            name="caption"
-            onChange={addCaption}
-            value={caption.caption}
-            placeholder="Caption"
-          ></input>
-          <textarea
-            name="story"
-            onChange={addCaption}
-            value={caption.story}
-            placeholder="Story..."
-            rows="2"
-          ></textarea>
-          <button onClick={submitComment} type="submit">
-            Submit
-          </button>
+
+          <button type="submit">Submit</button>
         </form>
       </div>
     </>

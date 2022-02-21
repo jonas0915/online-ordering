@@ -26,7 +26,7 @@ function CreateComments(props) {
   return (
     <>
       <div>
-        <form>
+        <form onSubmit={submitComment}>
           <input
             name="title"
             onChange={changeHandler}
@@ -40,9 +40,7 @@ function CreateComments(props) {
             placeholder="Comments. . . "
             rows="3"
           />
-          <button onClick={submitComment} type="submit">
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </>

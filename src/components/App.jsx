@@ -10,7 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  // image render
+  // comment render
   const [comments, setComments] = useState([]);
 
   function addComment(newComment) {
@@ -19,6 +19,7 @@ function App() {
     });
   }
 
+  // image render
   const [files, setFiles] = useState([]);
 
   function onSuccess(savedFiles) {
@@ -27,34 +28,26 @@ function App() {
 
   // caption render
 
-  const [captions, setCaptions] = useState([]);
+  // const [captions, setCaptions] = useState([]);
 
-  function addCaptions(newCaption) {
-    setCaptions((prevCaptions) => {
-      return [...prevCaptions, newCaption];
-    });
-  }
+  // function addCaptions(newCaption) {
+  //   setCaptions((prevCaptions) => {
+  //     return [...prevCaptions, newCaption];
+  //   });
+  // }
 
   return (
     <>
       <React.StrictMode>
         <Navigation />
         <Menu />
-        <Upload onSuccess={onSuccess} onAdd={addCaptions} />
+        <Upload onSuccess={onSuccess} />
         <CreateComments onAdd={addComment} />
-
-        {captions.map((captionItem, index) => {
-          return (
-            <Preview
-              files={files}
-              key={index}
-              id={index}
-              caption={captionItem.caption}
-              story={captionItem.story}
-            />
-          );
-        })}
-
+        {/* {captions.map((captionItem, index) => {
+          return ( */}
+        <Preview files={files} />
+        {/* );
+        })} */}
         <ToastContainer />
         {comments.map((commentItem, index) => {
           return (
@@ -66,7 +59,6 @@ function App() {
             />
           );
         })}
-
         <Footer />
       </React.StrictMode>
     </>
